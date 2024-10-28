@@ -1,0 +1,44 @@
+Ejercicio 9:
+
+Bucle for (int i = 0; i < vector.length - 1; i++)
+Este bucle externo recorre el array desde el primer elemento hasta el penúltimo:
+
+------ i es el índice del bucle externo que comienza en 0.
+
+------ i < vector.length - 1 asegura que el bucle se ejecute hasta el penúltimo elemento del array. Esto se hace porque el algoritmo de la burbuja compara cada elemento con el siguiente, por lo tanto, no necesitamos que el último elemento haga otra comparación.
+
+Bucle anidado for (int j = 0; j < vector.length - 1 - i; j++)
+Este bucle interno recorre los elementos restantes del array y realiza las comparaciones y posibles intercambios:
+
+j es el índice del bucle interno, que también comienza en 0.
+
+j < vector.length - 1 - i asegura que el bucle se ejecute hasta el penúltimo elemento no ordenado.
+
+vector.length - 1 es el tamaño del array menos uno.
+
+- i ajusta el límite superior para excluir los elementos ya ordenados en iteraciones anteriores.
+
+Cada iteración del bucle externo i "burbujeará" el valor más grande no ordenado restante al final de la sección no ordenada del array, reduciendo la cantidad de elementos no ordenados en cada iteración. Por eso, cada vez que i incrementa, se excluyen más elementos ordenados del bucle interno.
+
+Visualización
+Supongamos que tenemos un array [5, 1, 4, 2, 8]. El algoritmo hará lo siguiente:
+
+Primera pasada (i = 0): Comparará y posiblemente intercambiará cada par de elementos:
+
+Comparar 5 y 1, intercambiar.
+
+Comparar 5 y 4, intercambiar.
+
+Comparar 5 y 2, intercambiar.
+
+Comparar 5 y 8, no intercambiar.
+
+Segunda pasada (i = 1): Ahora excluye el último elemento ya ordenado:
+
+Comparar 1 y 4, no intercambiar.
+
+Comparar 4 y 2, intercambiar.
+
+Comparar 4 y 5, no intercambiar.
+
+Y así sucesivamente, hasta que todos los elementos estén ordenados.
